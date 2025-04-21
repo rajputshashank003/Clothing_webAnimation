@@ -87,6 +87,26 @@ const Page1 = () => {
                 ease : "circIn"
             }
         )
+        const image_animation = [0,1,2,3,4].map((ind) => {
+            return animate(".image" + ind, 
+                {
+                    rotate : [0 , odd(ind) , 0]
+                },
+                {
+                    duration : 3,
+                    ease : "linear",
+                    repeat : Infinity
+                }
+            )
+        })
+        image_animation
+    }
+
+    const odd = ( ind : number) => {
+        if(ind % 2 == 0) {
+            return 4;
+        }
+        return -4;
     }
 
     return (
@@ -137,7 +157,7 @@ const Page1 = () => {
                 </motion.div>
             </motion.div>
             <div
-                className="absolute max-md:h-10 h-60 max-md:top-[40%] overflow-hidden text-[1rem] left-[10%] -rotate-[20deg] flex justify-center items-center "
+                className="absolute p-8 max-md:h-10 h-60 max-md:top-[40%] overflow-hidden text-[1rem] left-[10%] -rotate-[20deg] flex justify-center items-center "
             >
                 <motion.div
                     initial={{
@@ -145,13 +165,13 @@ const Page1 = () => {
                         opacity  : 0,
                         scale : 0
                     }}
-                    className="px-10 max-md:px-2 poff rounded-3xl h-10 w-fit bg-violet-300/50 backdrop-blur-3xl text-white flex justify-center items-center"
+                    className="px-10 max-md:px-2 poff rounded-3xl h-10 w-fit bg-violet-300/80 backdrop-blur-3xl text-white flex justify-center items-center shadow-[0px_0px_5px] shadow-violet-700"
                 >
                     UpTo 20% off
                 </motion.div>
             </div>
             <div
-                className="absolute max-md:h-10 h-60 max-md:top-[40%] overflow-hidden text-[1rem] right-[10%] rotate-[20deg] flex justify-center items-center "
+                className="absolute max-md:h-10 p-8 h-60 max-md:top-[40%] overflow-hidden text-[1rem] right-[10%] rotate-[20deg] flex justify-center items-center "
             >
                 <motion.div
                     initial={{
@@ -159,7 +179,7 @@ const Page1 = () => {
                         opacity  : 0,
                         scale : 0
                     }}
-                    className="px-10 max-md:px-2 poff rounded-3xl h-10 w-fit bg-amber-300/70 backdrop-blue-[2rem] text-white flex justify-center items-center"
+                    className="px-10 max-md:px-2 poff rounded-3xl h-10 w-fit bg-amber-300/70 backdrop-blue-[2rem] text-white flex justify-center items-center shadow-[0px_0px_5px] shadow-amber-700"
                 >
                     Quality product
                 </motion.div>
