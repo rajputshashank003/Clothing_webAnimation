@@ -21,8 +21,7 @@ const AppBar = ({scope} : {scope : any}) => {
                 scroller : scope.current,
                 start : "top -1%",
                 end : "top -20%",
-                scrub : true,
-                markers : true
+                scrub : 2,
             },
             onStart : () => { console.log("started")}
         })
