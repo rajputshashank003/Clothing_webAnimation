@@ -145,7 +145,7 @@ const Page1 = () => {
                         opacity  : 0,
                         scale : 0
                     }}
-                    className="px-10 max-md:px-2 poff rounded-3xl h-10 w-fit bg-violet-300 text-white flex justify-center items-center"
+                    className="px-10 max-md:px-2 poff rounded-3xl h-10 w-fit bg-violet-300/50 backdrop-blur-3xl text-white flex justify-center items-center"
                 >
                     UpTo 20% off
                 </motion.div>
@@ -159,7 +159,7 @@ const Page1 = () => {
                         opacity  : 0,
                         scale : 0
                     }}
-                    className="px-10 max-md:px-2 poff rounded-3xl h-10 w-fit bg-amber-300 text-white flex justify-center items-center"
+                    className="px-10 max-md:px-2 poff rounded-3xl h-10 w-fit bg-amber-300/70 backdrop-blue-[2rem] text-white flex justify-center items-center"
                 >
                     Quality product
                 </motion.div>
