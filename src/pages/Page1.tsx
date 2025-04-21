@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { images } from "../utils/data"
 import { motion, useAnimate } from "motion/react"
-import { easeIn } from "motion"
 
 const Page1 = () => {
     const [scope , animate ] = useAnimate();
