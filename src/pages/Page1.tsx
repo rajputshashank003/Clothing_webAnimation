@@ -1,26 +1,11 @@
 import { useEffect } from "react";
 import { images } from "../utils/data"
 import { motion, useAnimate } from "motion/react"
+import { formula, odd } from "./helper";
+import AppBar from "../components/AppBar";
 
 const Page1 = () => {
     const [scope , animate ] = useAnimate();
-
-    const formula = (ind : number) : number => {
-        switch ( ind) {
-            case 0 : 
-                return 300;
-            case 1 : 
-                return 150;
-            case 2 : 
-                return 0;
-            case 3 : 
-                return -150;
-            case 4 : 
-                return -300;
-            default : 
-                return 0;
-        }
-    }
 
     useEffect(() => {
         handleAnimation();
@@ -102,37 +87,14 @@ const Page1 = () => {
         image_animation
     }
 
-    const odd = ( ind : number) => {
-        if(ind % 2 == 0) {
-            return 4;
-        }
-        return -4;
-    }
-
     return (
         <div
             ref={scope}
-            className="min-h-screen flex font-sans justify-center items-center w-screen overflow-x-hidden relative bg-gradient-to-b from-slate-50 to-violet-200"
+            className="h-[200vh] overflow-hidden flex font-sans justify-center items-center w-[100%] relative bg-gradient-to-b from-slate-50 to-violet-200"
         >
+            <AppBar scope={scope} />
             <motion.div
-                initial={{y : -500}} 
-                className="appbar absolute top-10 left-10 text-xl right-10 ">
-                <div className="fashion absolute left-10 hover:scale-[1.1] cursor-pointer duration-200 font-bold max-md:left-2 text-black">Fashion</div>
-                <div className="absolute gap-20 left-1/2   -translate-x-1/2 flex flex-row">
-                    {
-                        ["Home", "About us" , "Product" , "Contact"].map((val , ind) => (
-                            <div key={ind} className="relative hover:scale-[1.1] cursor-pointer duration-200 max-md:hidden duration-200 text-black">
-                                {val}
-                            </div>
-                        ))
-                    }
-                </div>
-                <div className="absolute right-10 hover:scale-[1.1] cursor-pointer duration-200  max-md:right-2">
-                    <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-user-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
-                </div>
-            </motion.div>
-            <motion.div
-                className="absolute overflow-hidden top-[20%] left-1/2 
+                className="absolute overflow-hidden top-[10%] left-1/2 
                     -translate-x-1/2 -translate-y-[30%]"
             >
                 <motion.div
@@ -157,7 +119,7 @@ const Page1 = () => {
                 </motion.div>
             </motion.div>
             <div
-                className="absolute p-8 max-md:h-10 h-60 max-md:top-[40%] overflow-hidden text-[1rem] left-[10%] -rotate-[20deg] flex justify-center items-center "
+                className="absolute p-8 max-md:h-10 h-60 max-md:top-[20%] top-[16%] overflow-hidden text-[1rem] left-[10%] -rotate-[20deg] flex justify-center items-center "
             >
                 <motion.div
                     initial={{
@@ -171,7 +133,7 @@ const Page1 = () => {
                 </motion.div>
             </div>
             <div
-                className="absolute max-md:h-10 p-8 h-60 max-md:top-[40%] overflow-hidden text-[1rem] right-[10%] rotate-[20deg] flex justify-center items-center "
+                className="absolute max-md:h-10 p-8 h-60 max-md:top-[20%] top-[16%] overflow-hidden text-[1rem] right-[10%] rotate-[20deg] flex justify-center items-center "
             >
                 <motion.div
                     initial={{
@@ -193,11 +155,11 @@ const Page1 = () => {
                         style={{
                             rotate : (ind % 2 == 0 ? "-" : "") + Math.floor(Math.random() * 10) + "deg",
                         }}
-                        className={"image" + ind + " images object-fit rounded-xl -translate-x-1/2 -translate-y-1/2 h-60 w-40 absolute top-1/2 left-1/2 shadow-[0px_0px_5px] shadow-gray-700"}
+                        className={"image" + ind + " images object-fit duration-300 rounded-xl -translate-x-1/2 -translate-y-[20%] h-60 w-40 absolute top-[20%] left-1/2 shadow-[0px_0px_5px] shadow-gray-700"}
                     />
                 ))
             }
-            <div className="relative -bottom-[50vh] h-[100vh] flex flex-col justify-center items-center gap-10">
+            <div className="absolute bottom-[30%] h-[50vh] flex flex-col justify-center items-center gap-10">
                 <motion.div
                     initial={{
                         y : 200,
